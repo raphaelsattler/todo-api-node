@@ -3,6 +3,6 @@ const uri = 'mongodb://raphael_sattler:samsung7s@node-course-shard-00-00-dhztq.m
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(uri, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true });
 
 module.exports = {mongoose};
